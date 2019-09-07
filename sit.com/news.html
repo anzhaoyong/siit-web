@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="static/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="static/css/main.css" />
+  </head>
+  <body>
+    <div id="app">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <a class="logo pull-left" href="#">
+            <h1>安慧<span>科技</span></h1>
+          </a>
+          <div class="navbar-header">
+            <button
+              type="button"
+              class="navbar-toggle collapsed"
+              data-toggle="collapse"
+              data-target="#bs-example-navbar-collapse"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div
+            class="collapse navbar-collapse "
+            id="bs-example-navbar-collapse"
+          >
+            <ul class="nav navbar-nav navbar-right">
+              <li class="navBg"></li>
+              <li>
+                <a href="index.html">网站首页</a>
+              </li>
+              <li>
+                <a href="about.html">关于我们</a>
+              </li>
+              <li>
+                <a href="product.html">产品中心</a>
+              </li>
+              <li>
+                <a href="solutions.html">解决方案</a>
+              </li>
+              <li>
+                <a href="service.html">服务案例</a>
+              </li>
+              <li class="active">
+                <a href="news.html">新闻中心</a>
+              </li>
+              <li>
+                <a href="contact.html">联系我们</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!--space-->
+      <div class="space"></div>
+      <div class="newsPg">
+        <div class="banner">
+          <img src="static/images/banner/ban4.jpg" />
+        </div>
+        <div class="newsList container padT80 padB80">
+          <section class="title">
+            <h2>新闻中心</h2>
+          </section>
+          <div class="row padT80">
+            <ul>
+              <li v-for="(item ,i ) in newsList">
+                <a :href="'news_detail.html?id='+item.id">
+                  <div class="newsTime">
+                    <p>5/22</p>
+                    <span>2017</span>
+                  </div>
+                  <div class="newsTitle">
+                    <h3>{{ item.title }}</h3>
+                    <p>
+                      {{ item.subTitle }}
+                    </p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <nav>
+          <ul>
+            <li><a href="index.html">网站首页</a></li>
+            <li><a href="about.html">关于我们</a></li>
+            <li><a href="service.html">服务案例</a></li>
+            <li><a href="news.html">新闻中心</a></li>
+            <li><a href="contact.html">联系我们</a></li>
+          </ul>
+        </nav>
+        <p>
+          <span class="glyphicon glyphicon-phone-alt"></span
+          >{{ companyInfo.phone }}
+          <span class="glyphicon glyphicon-earphone"></span
+          >{{ companyInfo.mobile }}
+          <span class="glyphicon glyphicon-envelope"></span
+          >{{ companyInfo.email }}
+        </p>
+      </footer>
+    </div>
+    <script
+      src="static/js/jquery.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="static/js/bootstrap.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="static/js/main.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.common.dev.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.19.0/axios.js"></script>
+
+    <script>
+      $(function() {
+        var app = new Vue({
+          el: '#app',
+          data: {
+            companyInfo: {},
+            newsList: []
+          },
+          created: function() {
+            this.getCompanyInfo(), this.getNewsList()
+          },
+          methods: {
+            getCompanyInfo: function() {
+              var that = this
+              axios({
+                method: 'get',
+                url: url_prefix + 'siit/companyInfo/queryById?id=1'
+              }).then(function(resp) {
+                console.log(resp.data)
+                that.companyInfo = resp.data.result
+              })
+            },
+            getNewsList: function() {
+              var that = this
+              axios({
+                method: 'get',
+                url: url_prefix + 'siit/news/list'
+              }).then(function(resp) {
+                console.log(resp.data.result.records)
+                that.newsList = resp.data.result.records
+              })
+            }
+          }
+        })
+      })
+    </script>
+  </body>
+</html>

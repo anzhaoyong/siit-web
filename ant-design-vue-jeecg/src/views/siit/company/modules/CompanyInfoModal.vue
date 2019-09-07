@@ -1,0 +1,166 @@
+<template>
+  <a-modal
+    :title="title"
+    :width="800"
+    :visible="visible"
+    :confirmLoading="confirmLoading"
+    @ok="handleOk"
+    @cancel="handleCancel"
+    cancelText="关闭">
+    
+    <a-spin :spinning="confirmLoading">
+      <a-form :form="form">
+      
+        <a-form-item
+          :labelCol="labelCol"
+          :wrapperCol="wrapperCol"
+          label="公司名称">
+          <a-input placeholder="请输入公司名称" v-decorator="['companyName', {}]" />
+        </a-form-item>
+        <a-form-item
+          :labelCol="labelCol"
+          :wrapperCol="wrapperCol"
+          label="公司简称">
+          <a-input placeholder="请输入公司简称" v-decorator="['shortName', {}]" />
+        </a-form-item>
+        <a-form-item
+          :labelCol="labelCol"
+          :wrapperCol="wrapperCol"
+          label="固定电话">
+          <a-input placeholder="请输入固定电话" v-decorator="['phone', {}]" />
+        </a-form-item>
+        <a-form-item
+          :labelCol="labelCol"
+          :wrapperCol="wrapperCol"
+          label="邮箱">
+          <a-input placeholder="请输入邮箱" v-decorator="['email', {}]" />
+        </a-form-item>
+        <a-form-item
+          :labelCol="labelCol"
+          :wrapperCol="wrapperCol"
+          label="手机（可多个）">
+          <a-input placeholder="请输入手机（可多个）" v-decorator="['mobile', {}]" />
+        </a-form-item>
+        <a-form-item
+          :labelCol="labelCol"
+          :wrapperCol="wrapperCol"
+          label="公司地址">
+          <a-input placeholder="请输入公司地址" v-decorator="['address', {}]" />
+        </a-form-item>
+        <a-form-item
+          :labelCol="labelCol"
+          :wrapperCol="wrapperCol"
+          label="经度">
+          <a-input placeholder="请输入经度" v-decorator="['longitude', {}]" />
+        </a-form-item>
+        <a-form-item
+          :labelCol="labelCol"
+          :wrapperCol="wrapperCol"
+          label="纬度">
+          <a-input placeholder="请输入纬度" v-decorator="['latitude', {}]" />
+        </a-form-item>
+		
+      </a-form>
+    </a-spin>
+  </a-modal>
+</template>
+
+<script>
+  import { httpAction } from '@/api/manage'
+  import pick from 'lodash.pick'
+  import moment from "moment"
+
+  export default {
+    name: "CompanyInfoModal",
+    data () {
+      return {
+        title:"操作",
+        visible: false,
+        model: {},
+        labelCol: {
+          xs: { span: 24 },
+          sm: { span: 5 },
+        },
+        wrapperCol: {
+          xs: { span: 24 },
+          sm: { span: 16 },
+        },
+
+        confirmLoading: false,
+        form: this.$form.createForm(this),
+        validatorRules:{
+        },
+        url: {
+          add: "/siit/companyInfo/add",
+          edit: "/siit/companyInfo/edit",
+        },
+      }
+    },
+    created () {
+    },
+    methods: {
+      add () {
+        this.edit({});
+      },
+      edit (record) {
+        this.form.resetFields();
+        this.model = Object.assign({}, record);
+        this.visible = true;
+        this.$nextTick(() => {
+          this.form.setFieldsValue(pick(this.model,'companyName','shortName','phone','email','mobile','address','longitude','latitude'))
+		  //时间格式化
+        });
+
+      },
+      close () {
+        this.$emit('close');
+        this.visible = false;
+      },
+      handleOk () {
+        const that = this;
+        // 触发表单验证
+        this.form.validateFields((err, values) => {
+          if (!err) {
+            that.confirmLoading = true;
+            let httpurl = '';
+            let method = '';
+            if(!this.model.id){
+              httpurl+=this.url.add;
+              method = 'post';
+            }else{
+              httpurl+=this.url.edit;
+               method = 'put';
+            }
+            let formData = Object.assign(this.model, values);
+            //时间格式化
+            
+            console.log(formData)
+            httpAction(httpurl,formData,method).then((res)=>{
+              if(res.success){
+                that.$message.success(res.message);
+                that.$emit('ok');
+              }else{
+                that.$message.warning(res.message);
+              }
+            }).finally(() => {
+              that.confirmLoading = false;
+              that.close();
+            })
+
+
+
+          }
+        })
+      },
+      handleCancel () {
+        this.close()
+      },
+
+
+    }
+  }
+</script>
+
+<style lang="less" scoped>
+
+</style>

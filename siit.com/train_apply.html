@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
+    />
+    <title>安全培训</title>
+    <link rel="stylesheet" type="text/css" href="css/public.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css" />
+    <link
+      href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <script type="text/javascript" src="js/jquery1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <link rel="stylesheet" href="static/layui/css/layui.css" media="all" />
+  </head>
+  <body>
+    <div class="top" id="top">
+      <div class="topLine clearfloat">
+        <div class="wrap">
+          <h2>您好，山东安慧信息科技有限公司 ！</h2>
+          <p>咨询热线：15169812531</p>
+        </div>
+      </div>
+      <div class="navWrap">
+        <div class="wrap clearfloat">
+          <div class="menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <a class="logo" href="index.html"
+            ><img src="img/resources/logo.png"
+          /></a>
+          <div class="nav">
+            <ul>
+              <li class="dropdown">
+                <span class="navBtn"></span>
+                <a href="about.html">关于我们</a>
+                <ul class="submenu">
+                  <li><a href="about.html">公司概况</a></li>
+                  <li><a href="about-culture.html">企业文化</a></li>
+                  <li><a href="about-contact.html">联系我们</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <span class="navBtn"></span>
+                <a href="news.html">新闻中心</a>
+                <ul class="submenu">
+                  <!--<li><a href="news.html">公司新闻</a></li>
+                  <li><a href="news-notice.html">行业动态</a></li>-->
+                </ul>
+              </li>
+              <li class="dropdown">
+                <span class="navBtn"></span>
+                <a href="solution.html">解决方案</a>
+                <ul class="submenu">
+                  <li><a href="solution.html?wl">智慧物联</a></li>
+                  <li><a href="solution.html?qy">智慧企业</a></li>
+                  <li><a href="solution.html?aq">智慧安全</a></li>
+                  <li><a href="solution.html?yj">智慧应急</a></li>
+                  <li><a href="solution.html?cs">智慧城市</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <span class="navBtn"></span>
+                <a href="product_detail.html?esp">产品介绍</a>
+                <ul class="submenu">
+                  <li>
+                    <a href="product_detail.html?esp">企业安全专家管理</a>
+                  </li>
+                  <li>
+                    <a href="product_detail.html?doubleCtrl">企业双控系统</a>
+                  </li>
+                  <li><a href="product_detail.html?warn">风险预警系统</a></li>
+                  <li><a href="product_detail.html?bd">大数据分析平台</a></li>
+                  <li><a href="product_detail.html?lot">物联网平台</a></li>
+                  <li><a href="product_detail.html?train">教育培训</a></li>
+                  <li><a href="product_detail.html?health">职业健康</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <span class="navBtn"></span>
+                <a href="classic.html">项目案例</a>
+                <ul class="submenu">
+                  <!--<li><a href="#">项目动态</a></li>
+                  <li><a href="#">项目展示</a></li>-->
+                </ul>
+              </li>
+
+              <li class="dropdown">
+                <span class="navBtn"></span>
+                <a href="train.html">安全培训</a>
+                <ul class="submenu">
+                  <li><a href="train_apply.html">立即报名</a></li>
+<li><a href="#">成绩查询</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="contBanner contBannerNews">
+          <div class="contBannerWrit">
+            <div class="contBannerWritW">
+              <h2>安全培训</h2>
+              <h3>SAFETY TRAIN</h3>
+            </div>
+          </div>
+        </div> -->
+
+    <div class="contMain" style="margin-top: 130px;">
+      <div class="wrap clearfloat">
+        <fieldset
+          class="layui-elem-field layui-field-title"
+          style="margin-top: 20px;"
+        >
+          <legend>填写报名信息</legend>
+        </fieldset>
+
+        <form class="layui-form" action="" lay-filter="trainForm">
+          <div class="layui-form-item ">
+              <label class="layui-form-label">姓名<font style="color: red">*</font></label>
+            <div class="layui-input-block">
+              <input
+                type="text"
+                name="name"
+                lay-verify="required"
+                lay-reqtext="姓名不能为空"
+                autocomplete="off"
+                placeholder="请输入姓名"
+                class="layui-input"
+              />
+            </div>
+          </div>
+          <div class="layui-form-item">
+        <label class="layui-form-label">身份证号<font style="color: red">*</font></label>
+        <div class="layui-input-block">
+          <input
+            type="text"
+            name="idno"
+            lay-verify="required|identity"
+            lay-reqtext="身份证号不能为空"
+            placeholder="请输入身份证号"
+            autocomplete="off"
+            class="layui-input"
+          />
+        </div>
+      </div>
+
+      <div class="layui-form-item">
+        <label class="layui-form-label">人员类型<font style="color: red">*</font></label>
+        <div class="layui-input-block">
+          <select name="type" lay-filter="required">
+            <option value=""></option>
+            <option value="1">主要负责人</option>
+            <option value="2">安全生产管理人员</option>
+          </select>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">矿山类型<font style="color: red">*</font></label>
+        <div class="layui-input-block">
+          <select name="mineType" lay-filter="required">
+            <option value=""></option>
+            <option value="1">露天矿山</option>
+            <option value="2">地下矿山</option>
+          </select>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-inline">
+          <label class="layui-form-label">经办人手机<font style="color: red">*</font></label>
+          <div class="layui-input-inline">
+            <input
+              type="tel"
+              name="phone"
+              lay-verify="required|phone"
+              autocomplete="off"
+              placeholder="请输入经办人手机号"
+              class="layui-input"
+            />
+          </div>
+        </div>
+
+
+      <div class="layui-form-item">
+        <label class="layui-form-label">文化程度<font style="color: red">*</font></label>
+        <div class="layui-input-block">
+          <select name="education" lay-filter="required">
+            <option value=""></option>
+            <option value="1">小学</option>
+            <option value="2">初中</option>
+            <option value="3">高中</option>
+            <option value="4">大学</option>
+          </select>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">职务<font style="color: red">*</font></label>
+        <div class="layui-input-block">
+          <input
+            type="text"
+            name="post"
+            lay-verify="required"
+            lay-reqtext="职务不能为空"
+            autocomplete="off"
+            placeholder="请输入职务"
+            class="layui-input"
+          />
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">工作单位<font style="color: red">*</font></label>
+        <div class="layui-input-block">
+          <input
+            type="text"
+            name="company"
+            lay-verify="required"
+            lay-reqtext="工作单位不能为空"
+            autocomplete="off"
+            placeholder="请输入工作单位全称"
+            class="layui-input"
+          />
+        </div>
+      </div>
+
+      <div class="layui-form-item">
+        <label class="layui-form-label">户籍地址<font style="color: red">*</font></label>
+        <div class="layui-input-block">
+          <input
+            type="text"
+            name="homeAddr"
+            lay-verify="required"
+            lay-reqtext="户籍地址不能为空"
+            autocomplete="off"
+            placeholder="请输入户籍地址（身份证上显示）"
+            class="layui-input"
+          />
+        </div>
+      </div>
+
+      <div class="layui-form-item">
+        <label class="layui-form-label">从业地址<font style="color: red">*</font></label>
+        <div class="layui-input-block">
+          <input
+            type="text"
+            name="jobAddr"
+            lay-verify="required"
+            lay-reqtext="户籍地址不能为空"
+            autocomplete="off"
+            placeholder="请输入户籍地址（具体到区县）"
+            class="layui-input"
+          />
+        </div>
+      </div>
+
+      <div class="layui-form-item">
+        <label class="layui-form-label">邮寄地址<font style="color: red">*</font></label>
+        <div class="layui-input-block">
+          <input
+            type="text"
+            name="sendAddr"
+            lay-verify="required"
+            lay-reqtext="证书邮寄地址不能为空"
+            autocomplete="off"
+            placeholder="请输入证书邮寄地址"
+            class="layui-input"
+          />
+        </div>
+      </div>
+
+      <div class="layui-inline">
+        <label class="layui-form-label">电子邮箱<font style="color: red">*</font></label>
+        <div class="layui-input-inline">
+          <input
+            type="text"
+            name="email"
+            lay-verify="email"
+            autocomplete="off"
+            placeholder="请输入电子邮箱"
+            class="layui-input"
+          />
+        </div>
+      </div>
+          <div class="layui-form-item">
+            <div class="layui-input-block">
+              <button class="layui-btn" lay-submit="" lay-filter="demo1">
+                立即提交
+              </button>
+              <button type="reset" class="layui-btn layui-btn-primary">
+                重置
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="wrap clearfloat">
+        <div class="left footerJt">
+          <a href=""
+            ><img src="img/resources/footer-logo.png" alt="Awesome Image"
+          /></a>
+          <ul class="contact">
+            <li>
+              <i class="fa fa-map-marker"></i>
+              <span>山东省济南市历城区华龙路创新大厦612室</span>
+            </li>
+            <li>
+              <i class="fa fa-phone"></i> <span>联系电话：15169812531</span>
+            </li>
+            <li>
+              <i class="fa fa-envelope-o"></i> <span>sdssit@126.com</span>
+            </li>
+          </ul>
+        </div>
+        <div class="left footerLink">
+          <h3 class="title">友情链接</h3>
+          <ul>
+            <li>
+              <a href="https://www.mem.gov.cn/" target="_blank"
+                >国家应急管理部</a
+              >
+            </li>
+            <li>
+              <a href="http://yjt.shandong.gov.cn/" target="_blank"
+                >山东省应急管理厅</a
+              >
+            </li>
+            <li>
+              <a href="http://jnsafety.jinan.gov.cn/" target="_blank"
+                >济南市应急管理局</a
+              >
+            </li>
+            <li><a href="#">安全培训成绩查询</a></li>
+          </ul>
+        </div>
+        <div class="left footerNews">
+          <h3 class="title">新闻中心</h3>
+          <ul>
+            <li>
+              <span class="border"></span>
+              <div class="content" style="background:#262f36;">
+                <a href="#">传承红色基因 弘扬“两弹”精神</a>
+                <span>July 2, 2018</span>
+              </div>
+            </li>
+            <li>
+              <span class="border"></span>
+              <div class="content" style="background:#262f36;">
+                <a href="#"
+                  >集团公司召开二季度安全生产暨防汛和“安全生产月”动员会
+                </a>
+                <span>July 2, 2018</span>
+              </div>
+            </li>
+            <li>
+              <span class="border"></span>
+              <div class="content" style="background:#262f36;">
+                <a href="#"
+                  >集团董事长邓辉星带队赴绵阳市商业银行对接融资工作
+                </a>
+                <span>July 2, 2018</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="right footerContact">
+          <h3 class="title">联系我们</h3>
+          <form action="#" class="contact-form" id="footer-cf">
+            <input type="text" name="name" placeholder="您的姓名" />
+            <input type="text" name="email" placeholder="你的邮箱" />
+            <textarea name="message" placeholder="你要填写的信息"></textarea>
+            <button type="submit">发送</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footerBottom">
+      <p>
+        copyright© 2019
+        <a href="http://www.sdah.com">山东安慧信息科技有限公司 </a> All Rights
+        Reservd.鲁9655412
+      </p>
+    </div>
+
+    <script src="static/layui/layui.all.js" charset="utf-8"></script>
+    <script src="static/js/jquery.min.js" charset="utf-8"></script>
+    <script>
+      layui.use(['form', 'layedit', 'laydate'], function() {
+        var form = layui.form,
+          layer = layui.layer
+
+        //自定义验证规则
+        form.verify({})
+
+        //监听提交
+        form.on('submit(demo1)', function(data) {
+          debugger
+          layer.load()
+          $.ajax({
+            method: 'POST',
+            url: 'http://39.100.144.211:9998/jeecg-boot/siit/trainPerson/add',
+            data: JSON.stringify(data.field),
+            async: false,
+            contentType: 'application/json',
+            success: function(result) {
+              layer.closeAll('loading')
+              if (result.code == 200) {
+                layer.alert(
+                  '报名成功',
+                  {
+                    title: '提示'
+                  },
+                  function() {
+                    location.reload()
+                    //form.val('');
+                  }
+                )
+              } else {
+                debugger
+                layer.alert(result.message, {
+                  title: '提示'
+                })
+              }
+            },
+            //请求失败，包含具体的错误信息
+            error: function(e) {
+              console.log(e.status)
+              console.log(e.responseText)
+              layer.alert(JSON.stringify(data.field), {
+                title: '错误'
+              })
+            }
+          })
+          return false
+        })
+
+        //表单初始赋值
+        //表单初始赋值
+        form.val('trainForm', {
+          // "name": "贤心" // "name": "value"
+          // ,"idno": "370123199009052515"
+          // ,"type": 1
+          // ,"mineType": 1
+          // ,"phone": "18055556666"
+          // ,"post": "总经理"
+          // ,"homeAddr": "山东省济南市长清区"
+          // ,"jobAddr": "山东济南市历城区"
+          // ,"sendAddr": "山东省济南市历城区创新大厦"
+          // ,"education": "3"
+          // ,"company":"山东安慧信息科技有限公司"
+          // ,"email": "690653420@qq.com"
+        })
+      })
+    </script>
+  </body>
+</html>

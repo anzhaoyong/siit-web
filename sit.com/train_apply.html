@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>安全培训报名</title>
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <link rel="stylesheet" href="static/layui/css/layui.css" media="all" />
+
+    <style>
+      /* .layui-form-label{
+
+        width: 100px;
+      }
+      .layui-input-block{
+
+        margin-left: 130px;
+      } */
+
+    </style>
+  </head>
+  <body>
+    <fieldset
+      class="layui-elem-field layui-field-title"
+      style="margin-top: 20px;"
+    >
+      <legend>填写报名信息</legend>
+    </fieldset>
+
+    <form class="layui-form" action="" lay-filter="trainForm">
+      <div class="layui-form-item ">
+        <label class="layui-form-label ">姓名<font style="color: red">*</font></label>
+        <div class="layui-input-block">
+          <input
+            type="text"
+            name="name"
+            lay-verify="required"
+            lay-reqtext="姓名不能为空"
+            autocomplete="off"
+            placeholder="请输入姓名"
+            class="layui-input"
+          />
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">身份证号<font style="color: red">*</font></label>
+        <div class="layui-input-block">
+          <input
+            type="text"
+            name="idno"
+            lay-verify="required|identity"
+            lay-reqtext="身份证号不能为空"
+            placeholder="请输入身份证号"
+            autocomplete="off"
+            class="layui-input"
+          />
+        </div>
+      </div>
+
+      <div class="layui-form-item">
+        <label class="layui-form-label">人员类型<font style="color: red">*</font></label>
+        <div class="layui-input-block">
+          <select name="type" lay-filter="required">
+            <option value=""></option>
+            <option value="1">主要负责人</option>
+            <option value="2">安全生产管理人员</option>
+          </select>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">矿山类型<font style="color: red">*</font></label>
+        <div class="layui-input-block">
+          <select name="mineType" lay-filter="required">
+            <option value=""></option>
+            <option value="1">露天矿山</option>
+            <option value="2">地下矿山</option>
+          </select>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-inline">
+          <label class="layui-form-label">经办人手机<font style="color: red">*</font></label>
+          <div class="layui-input-inline">
+            <input
+              type="tel"
+              name="phone"
+              lay-verify="required|phone"
+              autocomplete="off"
+              placeholder="请输入经办人手机号"
+              class="layui-input"
+            />
+          </div>
+        </div>
+
+
+      <div class="layui-form-item">
+        <label class="layui-form-label">文化程度<font style="color: red">*</font></label>
+        <div class="layui-input-block">
+          <select name="education" lay-filter="required">
+            <option value=""></option>
+            <option value="1">小学</option>
+            <option value="2">初中</option>
+            <option value="3">高中</option>
+            <option value="4">大学</option>
+          </select>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">职务<font style="color: red">*</font></label>
+        <div class="layui-input-block">
+          <input
+            type="text"
+            name="post"
+            lay-verify="required"
+            lay-reqtext="职务不能为空"
+            autocomplete="off"
+            placeholder="请输入职务"
+            class="layui-input"
+          />
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">工作单位<font style="color: red">*</font></label>
+        <div class="layui-input-block">
+          <input
+            type="text"
+            name="company"
+            lay-verify="required"
+            lay-reqtext="工作单位不能为空"
+            autocomplete="off"
+            placeholder="请输入工作单位全称"
+            class="layui-input"
+          />
+        </div>
+      </div>
+
+      <div class="layui-form-item">
+        <label class="layui-form-label">户籍地址<font style="color: red">*</font></label>
+        <div class="layui-input-block">
+          <input
+            type="text"
+            name="homeAddr"
+            lay-verify="required"
+            lay-reqtext="户籍地址不能为空"
+            autocomplete="off"
+            placeholder="请输入户籍地址（身份证上显示）"
+            class="layui-input"
+          />
+        </div>
+      </div>
+
+      <div class="layui-form-item">
+        <label class="layui-form-label">从业地址<font style="color: red">*</font></label>
+        <div class="layui-input-block">
+          <input
+            type="text"
+            name="jobAddr"
+            lay-verify="required"
+            lay-reqtext="户籍地址不能为空"
+            autocomplete="off"
+            placeholder="请输入户籍地址（具体到区县）"
+            class="layui-input"
+          />
+        </div>
+      </div>
+
+      <div class="layui-form-item">
+        <label class="layui-form-label">邮寄地址<font style="color: red">*</font></label>
+        <div class="layui-input-block">
+          <input
+            type="text"
+            name="sendAddr"
+            lay-verify="required"
+            lay-reqtext="证书邮寄地址不能为空"
+            autocomplete="off"
+            placeholder="请输入证书邮寄地址"
+            class="layui-input"
+          />
+        </div>
+      </div>
+
+      <div class="layui-inline">
+        <label class="layui-form-label">电子邮箱<font style="color: red">*</font></label>
+        <div class="layui-input-inline">
+          <input
+            type="text"
+            name="email"
+            lay-verify="email"
+            autocomplete="off"
+            placeholder="请输入电子邮箱"
+            class="layui-input"
+          />
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button class="layui-btn" lay-submit="" lay-filter="demo1">
+            立即提交
+          </button>
+          <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+      </div>
+    </form>
+
+    <script src="static/layui/layui.all.js" charset="utf-8"></script>
+    <script src="static/js/jquery.min.js" charset="utf-8"></script>
+    <script>
+      layui.use(['form', 'layedit', 'laydate'], function() {
+        var form = layui.form,
+          layer = layui.layer
+
+
+        //自定义验证规则
+        form.verify({
+          
+        })
+
+        //监听提交
+        form.on('submit(demo1)', function(data) {
+          debugger;
+          layer.load();
+          $.ajax({
+            method : "POST",
+            url : "http://39.100.144.211:9998/jeecg-boot/siit/trainPerson/add",
+            data : JSON.stringify(data.field),
+            async:false,
+            contentType:"application/json",
+            success : function(result) {
+              layer.closeAll('loading');
+              if(result.code==200){
+                  layer.alert("报名成功", {
+                  title: '提示',
+                },function(){
+                  location.reload(); 
+                  //form.val('');
+                })
+                }else{
+                  debugger;
+                  layer.alert(result.message, {
+                  title: '提示'
+                })
+                  
+                }
+
+                
+            },
+            //请求失败，包含具体的错误信息
+            error : function(e){
+                console.log(e.status);
+                console.log(e.responseText);
+                layer.alert(JSON.stringify(data.field), {
+                  title: '错误'
+                });
+            }
+        });
+            return false;
+        })
+
+        //表单初始赋值
+        //表单初始赋值
+        form.val('trainForm', {
+          // "name": "贤心" // "name": "value"
+          // ,"idno": "370123199009052515"
+          // ,"type": 1
+          // ,"mineType": 1 
+          // ,"phone": "18055556666" 
+          // ,"post": "总经理"
+          // ,"homeAddr": "山东省济南市长清区"
+          // ,"jobAddr": "山东济南市历城区"
+          // ,"sendAddr": "山东省济南市历城区创新大厦"
+          // ,"education": "3"
+          // ,"company":"山东安慧信息科技有限公司"
+          // ,"email": "690653420@qq.com"
+        })
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="TTUNION_verify" content="b846c3c2b85efabc496d2a2b8399cd62" />
+    <meta name="sogou_site_verification" content="gI1bINaJcL" />
+    <meta
+      name="360-site-verification"
+      content="37ae9186443cc6e270d8a52943cd3c5a"
+    />
+    <meta
+      name="baidu_union_verify"
+      content="99203948fbfbb64534dbe0f030cbe817"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="山东安慧" />
+    <meta name="description" content="山东安慧" />
+    <meta name="author" content="AUI, a-ui.com" />
+    <meta name="baidu-site-verification" content="ZVPGgtpUfW" />
+    <title>山东安慧--关于我们</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link
+      href="iTunesArtwork@2x.png"
+      sizes="114x114"
+      rel="apple-touch-icon-precomposed"
+    />
+    <link type="text/css" rel="stylesheet" href="themes/css/base.css" />
+    <link type="text/css" rel="stylesheet" href="static/css/home.css" />
+    <link type="text/css" rel="stylesheet" href="static/css/footer.css" />
+    <script type="text/javascript" src="static/js/jquery.min.js"></script>
+
+    <script
+      type="text/javascript"
+      src="http://api.map.baidu.com/api?v=2.0&ak=67jMQ5DmYTe1TLMBKFUTcZAR"
+    ></script>
+  </head>
+  <body>
+    <div class="header">
+      <h1>
+        <a href="index.html">
+          <div class="logo">
+            <img class="full_height" src="themes/img/logo.png" alt="向北智大" />
+          </div>
+        </a>
+      </h1>
+      <div class="page-tab">
+        <div class="hoverUnderLine"></div>
+        <ul class="first-menu">
+          <li>
+            <a href="index.html">首页</a>
+          </li>
+          <li>
+            <a href="solutions.html">解决方案</a>
+          </li>
+          <li>
+            <a href="receive.html">产品服务</a>
+          </li>
+          <li>
+            <a href="train.html">安全培训</a>
+          </li>
+          <li class="active">
+            <a href="about.html">关于我们</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="aui-Wrapper">
+      <div class="aui-about-bg">
+        <div class="aui-content">
+          <div class="aui-content-region">
+            <span class="aui-icon-left"></span>
+            <h2>致力于成为企业安全智慧科技个性化服务专家</h2>
+            <h2>让每位客户都拥有最具智慧的个性化解决方案</h2>
+            <span class="aui-icon-right"></span>
+          </div>
+        </div>
+      </div>
+      <div class="aui-content-text">
+        <h3>关于我们</h3>
+        <p>
+          山东安慧信息科技有限公司是一家专注于企业安全风险管理的成长型高科技公司，总部位于济南市历城区创新大厦。安慧科技以人工智能、物联网、大数据分析、异构数据源采集等新一代信息技术为立足点，以互联网思维强化设计理念，以创新自主研发和优质客户服务为特色，提供安全生产智能信息化整体解决方案的创新型高科技企业。
+          安慧科技拥有一流的软件产品设计和研发团队，具有超强的前沿技术感知能力和创新研发能力，专注于研发具有自主核心技术和知识产权的软硬件产品，具有企业安全生产信息化全线产品的设计和研发实力，以“互联网+”产品和服务思维助理企业工业4.0的建设和发展。目前产品包括一站式门户、在线培训考试、企业智慧双预控平台、工业物联网平台、工业大数据平台、企业安全生产智慧专家治理系统、智慧应急管理系统、智能无人巡检平台等一系列“移动化、数据化、可视化、智能化”为特点的企业安全管理系列产品。
+          “安慧”的品牌含义有层： @第一层含义，专注安全生产
+          当大多数人都在忽悠的时候，需要有人专注做事，专心每一个细节。安慧科技专注解决企业安全管理实际问题，坚持不造概念，不忽悠，匠心打造好每一个企业安全管理产品。
+          @第二层含义，智慧智成未来
+          人才是智慧创新的源泉，安慧公司坚持公司与员工共同成长，扁平化、人性化、成长性是我们公司的人才理念，我们相信人才是公司最核心的竞争力，智慧才能智成未来。
+        </p>
+      </div>
+    </div>
+    <!-- map begin -->
+    <div class="auo-map-box">
+      <div id="map">
+        <div style="width: 100%; height: 400px;" id="allmap"></div>
+      </div>
+      <iframe
+        style="display: none;"
+        id="geoPage"
+        width="100%"
+        height="30%"
+        frameborder="0"
+        scrolling="no"
+        src="https://apis.map.qq.com/tools/geolocation?key=OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77&referer=myapp&effect=zoom"
+      ></iframe>
+      <script type="text/javascript">
+        function ShowMap(zuobiao, name, addrsee, phone, chuanzhen, zoom) {
+          var arrzuobiao = zuobiao.split(',')
+          var map = new BMap.Map('allmap')
+          map.addControl(new BMap.OverviewMapControl())
+          map.centerAndZoom(new BMap.Point(arrzuobiao[0], arrzuobiao[1]), zoom)
+          map.addControl(new BMap.NavigationControl())
+          var marker = new BMap.Marker(
+            new BMap.Point(arrzuobiao[0], arrzuobiao[1])
+          )
+          map.addOverlay(marker)
+          var infoWindow = new BMap.InfoWindow(
+            '<p style="color: #bf0008;font-size:14px;">' +
+              name +
+              '</p><p style="font-size:13px;">地址：' +
+              addrsee +
+              '</p><p style="font-size:12px;">电话：' +
+              phone +
+              '</p> '
+          )
+          marker.addEventListener('click', function() {
+            this.openInfoWindow(infoWindow)
+          })
+          marker.openInfoWindow(infoWindow)
+        }
+
+        var loc
+        var isMapInit = false
+        //监听定位组件的message事件
+        window.addEventListener(
+          'message',
+          function(event) {
+            loc = event.data
+            // 接收位置信息
+            //console.log('location', loc);
+            if (loc && loc.module == 'geolocation') {
+              //定位成功,防止其他应用也会向该页面post信息，需判断module是否为'geolocation'
+              var markUrl =
+                'https://apis.map.qq.com/tools/poimarker' +
+                '?marker=coord:' +
+                loc.lat +
+                ',' +
+                loc.lng +
+                ';title:我的位置;addr:' +
+                (loc.addr || loc.city) +
+                '&key=OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77&referer=myapp'
+              //给位置展示组件赋值
+              // document.getElementById('markPage').src = markUrl;
+              var lng = loc.lng
+              //经度
+              var lat = loc.lat
+              //维度
+              console.log(lng)
+              ShowMap(
+                '117.095611, 36.687533',
+                '山东安慧信息科技有限公司',
+                '济南市历城区创新大厦612',
+                '19000323233',
+                '',
+                '18'
+              )
+            } else {
+              console.log('定位失败')
+            }
+          },
+          false
+        )
+      </script>
+    </div>
+
+    <div class="wave-box">
+      <div class="marquee-box marquee-up" id="marquee-box">
+        <div class="marquee">
+          <div class="wave-list-box" id="wave-list-box1">
+            <ul>
+              <li>
+                <img
+                  height="60"
+                  alt="波浪"
+                  src="static/images/footer/wave_02.png"
+                />
+              </li>
+            </ul>
+          </div>
+          <div class="wave-list-box" id="wave-list-box2">
+            <ul>
+              <li>
+                <img
+                  height="60"
+                  alt="波浪"
+                  src="static/images/footer/wave_02.png"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="marquee-box" id="marquee-box3">
+        <div class="marquee">
+          <div class="wave-list-box" id="wave-list-box4">
+            <ul>
+              <li>
+                <img
+                  height="60"
+                  alt="波浪"
+                  src="static/images/footer/wave_01.png"
+                />
+              </li>
+            </ul>
+          </div>
+          <div class="wave-list-box" id="wave-list-box5">
+            <ul>
+              <li>
+                <img
+                  height="60"
+                  alt="波浪"
+                  src="static/images/footer/wave_01.png"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="auto clearfix">
+        <!-- footer主要-->
+        <div class="five-superiority">
+          <ul class="five-superiority-list clearfix">
+            <li class="compensate_ico">
+              <a href="#compensate">
+                <span class="superiority-icon"></span>
+                <span>创新</span>
+              </a>
+            </li>
+            <li class="retreat_ico">
+              <a href="#refund">
+                <span class="superiority-icon"></span>
+                <span>责任</span>
+              </a>
+            </li>
+            <li class="technology_ico">
+              <a class="superiority-text" href="#afterService">
+                <span class="superiority-icon"></span>
+                <span>专注</span>
+              </a>
+            </li>
+            <li class="prepare_ico">
+              <a href="#ico">
+                <span class="superiority-icon"></span>
+                <span>成长</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-floor1">
+          <div class="footer-list">
+            <ul>
+              <li class="flist-title">解决方案</li>
+              <li><a href="#">企业安全生产解决方案</a></li>
+              <li><a href="#">政府安全监管解决方案</a></li>
+              <li><a href="#">物联网平台</a></li>
+              <li><a href="#">大数据分析平台</a></li>
+              <li><a href="#"></a></li>
+            </ul>
+            <ul>
+              <li class="flist-title">产品与服务</li>
+              <li>
+                <a href="#"><strong>企业双控平台</strong></a>
+              </li>
+              <li>
+                <a href="#"><strong>物联网平台</strong></a>
+              </li>
+              <li>
+                <a href="#"><strong>大数据分析平台</strong></a>
+              </li>
+              <li>
+                <a href="#"><strong>企业安全培训系统</strong></a>
+              </li>
+              <li>
+                <a href="#"><strong>职业健康管理系统</strong></a>
+              </li>
+            </ul>
+
+            <ul>
+              <li class="flist-title">关于我们</li>
+              <li><a href="#">公司简介</a></li>
+              <li><a href="#">新闻动态</a></li>
+              <li><a href="#">加入我们</a></li>
+            </ul>
+            <ul class="flist-4">
+              <li class="flist-title">安全培训</li>
+              <li><a href="#" target="/user/">立即报名</a></li>
+              <li><a href="#">成绩查询</a></li>
+            </ul>
+            <div class="clear-float"></div>
+          </div>
+          <div class="footer-right">
+            <div class="telephone" title="服务热线">
+              <span></span>
+              <div class="tel-number">400-688-3065</div>
+            </div>
+            <div class="official-plat">
+              <p class="weixin" style="background-image: ">
+                <span id="wx-corner"></span>
+              </p>
+
+              <p class="weibo" style="background-image: ">
+                <span id="wb-corner"></span>
+              </p>
+              <ul>
+                <li>
+                  <a href="#a_null"
+                    ><span class="weixin-logo"></span>微信公众号</a
+                  >
+                </li>
+                <li title="点击打开官方微博">
+                  <a href="#" target="_blank"
+                    ><span class="weibo-logo"></span>官方微博</a
+                  >
+                </li>
+                <li title="点击打开官方客服">
+                  <a
+                    href="http://crm2.qq.com/page/portalpage/wpa.php?uin=XXXXXXXX&amp;aty=0&amp;a=0&amp;curl=&amp;ty=1"
+                    ><span class="qq-logo"></span>官方客服</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="clear-float"></div>
+        </div>
+      </div>
+      <div class="footer-floor2">
+        <p>Copyright © 2013-2017 XXX.com. All Rights Reserved. XXX 版权所有</p>
+        <p></p>
+        <p>
+          《中华人民共和国增值电信业务经营许可证》粤B1-20160477&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="#" target="_blank">粤ICP备1507XX06号</a>
+          <a href="#" class="foot-link" target="_blank">
+            粤公网安备 440305XX000120号
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="mask">
+      <div class="layer"></div>
+      <div class="content">
+        <img src="themes/img/maskLayer.png" alt="低于ie8提示" />
+        <a
+          class="google"
+          href="https://www.google.cn/intl/zh-CN/chrome/browser/desktop/"
+          target="_blank"
+          >谷歌 Chrome</a
+        >
+        <a class="firefox" href="http://www.firefox.com.cn/" target="_blank"
+          >火狐 Firefox</a
+        >
+      </div>
+    </div>
+    <script type="text/javascript" src="static/js/footer.js"></script>
+    <!--        <script src="static/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>-->
+
+    <script type="text/javascript">
+      $('.aui-list-grids').click(function(e) {
+        $(this)
+          .addClass('this-card')
+          .siblings()
+          .removeClass('this-card')
+
+        $('#type-amount').html(
+          $(this)
+            .find('.cardAmount')
+            .html()
+        )
+      })
+    </script>
+  </body>
+</html>
